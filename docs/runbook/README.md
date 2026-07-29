@@ -11,7 +11,7 @@ Local Mississippi tech business site for [cipherware.tech](https://cipherware.te
 
 ## Shared UI kit
 - Source of truth: `/home/nate/Documents/dev/cipherware-kit` (separate repo)
-- Vendored copy for static deploy: `vendor/cipherware-kit/cipherware.css` (kit `0.2.1`)
+- Vendored copy for static deploy: `vendor/cipherware-kit/cipherware.css` (kit `0.2.2`)
 - Marketing `styles.css` `@import`s the kit, then adds page-specific rules
 - Mobile chrome: kit `.nav-toggle` + `js/site.js` toggles `.is-nav-open` under 720px
 - Phone-first marketing layout in `styles.css` (`max-width: 719px`); home has mobile Call CTA
@@ -45,7 +45,7 @@ Local Mississippi tech business site for [cipherware.tech](https://cipherware.te
 - Shown in the site footer as `vX.Y.Z`
 - Set in [`js/config.js`](../../js/config.js) as `window.CIPHERWARE_VERSION`
 - Keep in sync with the release branch name (e.g. `release/1.3.2` → `1.3.2`)
-- Current: `1.3.2`
+- Current: `1.3.4`
 
 ## Cal.com
 - Config: [`js/config.js`](../../js/config.js) — `window.CIPHERWARE_CAL_LINK`

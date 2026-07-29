@@ -1,6 +1,11 @@
-@import url("vendor/cipherware-kit/cipherware.css?v=0.2.1");
+@import url("vendor/cipherware-kit/cipherware.css?v=0.2.2");
 
 /* Site-specific layout (marketing pages) — chrome/tokens come from cipherware-kit */
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
 
 #book {
   scroll-margin-top: 5.5rem;
@@ -34,6 +39,8 @@
   letter-spacing: -0.04em;
   line-height: 0.95;
   color: var(--text);
+  overflow-wrap: break-word;
+  word-break: break-word;
   animation: rise 0.9s ease both;
 }
 
@@ -273,8 +280,10 @@
   }
 
   .brand {
-    font-size: clamp(2.6rem, 13vw, 3.35rem);
+    font-size: clamp(2rem, 9.5vw, 2.85rem);
     margin-bottom: 0.55rem;
+    overflow-wrap: break-word;
+    word-break: break-word;
   }
 
   .hero h1,

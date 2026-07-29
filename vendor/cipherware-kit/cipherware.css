@@ -26,7 +26,7 @@
   --page-max: var(--cw-page-max);
   --pad: var(--cw-pad);
 }
-/* Cipherware kit — base + chrome patterns (v0.2.1) */
+/* Cipherware kit — base + chrome patterns (v0.2.2) */
 
 *,
 *::before,
@@ -377,12 +377,22 @@ svg {
   .site-footer {
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.85rem;
-    padding: 1.25rem var(--pad) 2rem;
+    gap: 1.35rem;
+    padding: 1.75rem var(--pad) 2.5rem;
+    font-size: 1rem;
+    line-height: 1.5;
   }
 
   .footer-meta {
-    gap: 0.45rem 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.85rem;
+  }
+
+  .site-footer a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.5rem;
   }
 }
 

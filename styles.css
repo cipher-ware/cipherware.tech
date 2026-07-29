@@ -1,0 +1,194 @@
+:root {
+  --bg: #0a0a0a;
+  --bg-elevated: #121212;
+  --text: #f2f2f2;
+  --muted: #9a9a9a;
+  --accent: #00e5ff;
+  --accent-soft: color-mix(in srgb, var(--accent) 18%, transparent);
+  --font-display: "Syne", sans-serif;
+  --font-body: "Outfit", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  color: var(--text);
+  background: var(--bg);
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.atmosphere {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 80% 55% at 70% 20%, var(--accent-soft), transparent 60%),
+    radial-gradient(ellipse 60% 50% at 15% 85%, rgba(255, 255, 255, 0.04), transparent 55%),
+    linear-gradient(165deg, #0d0d0d 0%, var(--bg) 45%, #080808 100%);
+}
+
+.atmosphere::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.35;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+  mix-blend-mode: soft-light;
+}
+
+.hero {
+  position: relative;
+  z-index: 1;
+  min-height: 100svh;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: clamp(2rem, 6vw, 4rem);
+  padding: clamp(2rem, 5vw, 4rem);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.copy {
+  max-width: 28rem;
+}
+
+.brand {
+  margin: 0 0 1.25rem;
+  font-family: var(--font-display);
+  font-size: clamp(2.75rem, 8vw, 4.5rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  color: var(--text);
+  animation: rise 0.9s ease both;
+}
+
+h1 {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: var(--accent);
+  animation: rise 0.9s ease 0.12s both;
+}
+
+.lede {
+  margin: 0 0 1.75rem;
+  font-size: 1.05rem;
+  color: var(--muted);
+  animation: rise 0.9s ease 0.22s both;
+}
+
+.cta {
+  margin: 0;
+  animation: rise 0.9s ease 0.32s both;
+}
+
+.cta a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 0.15rem;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.cta a:hover,
+.cta a:focus-visible {
+  color: var(--accent);
+  outline: none;
+}
+
+.mark {
+  display: flex;
+  justify-content: flex-start;
+  animation: rise 1s ease 0.2s both;
+}
+
+.sad-computer {
+  width: min(100%, 280px);
+  color: var(--text);
+  animation: float 5.5s ease-in-out infinite;
+}
+
+.sad-computer circle,
+.sad-computer path[d^="M100"] {
+  animation: blink 4.5s ease-in-out infinite;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes blink {
+  0%,
+  92%,
+  100% {
+    opacity: 1;
+  }
+  96% {
+    opacity: 0.15;
+  }
+}
+
+@media (min-width: 800px) {
+  .hero {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+
+  .mark {
+    justify-content: flex-end;
+  }
+
+  .sad-computer {
+    width: min(100%, 340px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand,
+  h1,
+  .lede,
+  .cta,
+  .mark,
+  .sad-computer,
+  .sad-computer circle,
+  .sad-computer path[d^="M100"] {
+    animation: none;
+  }
+}

@@ -76,6 +76,9 @@ svg {
 }
 
 .site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -83,6 +86,13 @@ svg {
   max-width: var(--page-max);
   margin: 0 auto;
   padding: 1.1rem var(--pad);
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+#book {
+  scroll-margin-top: 5.5rem;
 }
 
 .logo {

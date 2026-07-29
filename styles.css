@@ -437,6 +437,12 @@ svg {
   gap: 0.5rem 1.25rem;
 }
 
+.site-version {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
 @keyframes rise {
   from {
     opacity: 0;

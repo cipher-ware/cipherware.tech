@@ -21,6 +21,12 @@ Local Mississippi tech business site for [cipherware.tech](https://cipherware.te
 - Address: `5456 Hopewell Rd, Little Rock, MS 39337`
 - Hours: Monday–Friday, 9:00 AM – 6:00 PM
 
+## Version
+- Shown in the site footer as `vX.Y.Z`
+- Set in [`js/config.js`](../../js/config.js) as `window.CIPHERWARE_VERSION`
+- Keep in sync with the release branch name (e.g. `release/1.1.0` → `1.1.0`)
+- Current: `1.1.0`
+
 ## Cal.com
 - Config: [`js/config.js`](../../js/config.js) — `window.CIPHERWARE_CAL_LINK`
 - Current link path: `nathaniel-more-4e9oew` → https://cal.com/nathaniel-more-4e9oew
@@ -31,7 +37,7 @@ Local Mississippi tech business site for [cipherware.tech](https://cipherware.te
 - Deploy: upload the whole site root to `public_html`:
   - `index.html`, `about.html`, `services.html`, `contact.html`
   - `styles.css`, `favicon.svg`
-  - `js/config.js`, `js/cal-embed.js`
+  - `js/config.js`, `js/site.js`, `js/cal-embed.js`
 - No build step.
 
 ## Brand notes

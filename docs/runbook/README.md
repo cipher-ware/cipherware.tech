@@ -18,7 +18,9 @@ Local Mississippi tech business site for [cipherware.tech](https://cipherware.te
 
 ## App / auth / invoicing
 - Laravel app: `/home/nate/Documents/dev/cipherware-app` (separate repo)
-- Planned subdomain: `app.cipherware.tech` → Laravel `public/`
+- Subdomain: `app.cipherware.tech`
+- cPanel domain created with **Share document root unchecked**
+- Document root: `/home/ciphhabn/app.cipherware.tech/public` (Laravel `public/`, not the project root)
 - Node reserved for later IoT / realtime services
 
 ## Stack
@@ -38,8 +40,8 @@ Local Mississippi tech business site for [cipherware.tech](https://cipherware.te
 ## Version
 - Shown in the site footer as `vX.Y.Z`
 - Set in [`js/config.js`](../../js/config.js) as `window.CIPHERWARE_VERSION`
-- Keep in sync with the release branch name (e.g. `release/1.1.0` → `1.1.0`)
-- Current: `1.1.0`
+- Keep in sync with the release branch name (e.g. `release/1.2.0` → `1.2.0`)
+- Current: `1.2.0`
 
 ## Cal.com
 - Config: [`js/config.js`](../../js/config.js) — `window.CIPHERWARE_CAL_LINK`
@@ -52,6 +54,29 @@ Local Mississippi tech business site for [cipherware.tech](https://cipherware.te
   - HTML pages, `styles.css`, `favicon.svg`, `js/*`
   - `vendor/cipherware-kit/cipherware.css` (required by `@import`)
 - No build step for marketing site.
+- FTP for deploys/validation: use an account whose Directory is `public_html` (not a nested `/cursor` jail). Recreate the FTP account if cPanel won’t let you change the path.
+
+## SSL (Namecheap purchased cert + cPanel)
+Namecheap **issues** the cert; cPanel must **install** it on the vhost. Both steps are required.
+
+1. **CSR / activate** in Namecheap SSL Certificates (or use cPanel auto-installer / “Server-side automation”).
+2. **DCV (HTTP file upload):**  
+   - Create `public_html/.well-known/pki-validation/`  
+   - Upload Namecheap’s `verify.txt` unchanged  
+   - Confirm `http://cipherware.tech/.well-known/pki-validation/verify.txt` returns 200  
+   - Click **Verify** in Namecheap  
+3. **Install in cPanel:** Namecheap → cPanel → **Namecheap SSL**.  
+   - If status is **in progress**, hit **Sync** on that page (easy to miss — it’s a separate cPanel tool/tab from Domain List / SSL Certificates in the Namecheap account). Sync often finishes install without a manual CRT paste.  
+   - Until install finishes, HTTPS may still serve the shared host cert (`*.web-hosting.com`) and browsers will warn (SAN mismatch).  
+4. When status is installed/active: enable **HTTPS by default** / **HTTPS Redirect**.  
+5. Confirm `https://cipherware.tech` shows a padlock / cert for `cipherware.tech` (not `*.web-hosting.com`).
+
+**Gotchas**
+- Duplicate SSL rows for the same domain are common if you activate more than once or mix auto-installer + manual. Prefer **one Active** cert; cancel leftovers after HTTPS works with the correct CN.
+- If Namecheap shows **Active** + **Download**, install that CRT (and CA bundle) in cPanel → **SSL/TLS** → Install, even if another row is still Pending via the shared-hosting tool.
+- cPanel install is a separate step from Namecheap “Active” issuance — don’t skip it.
+- Auto-installer can take up to ~25 minutes after DCV.
+- Until the domain cert is installed, HTTPS may present `*.web-hosting.com` (browser warning / SAN mismatch).
 
 ## Brand notes
 - Display name: Cipherware

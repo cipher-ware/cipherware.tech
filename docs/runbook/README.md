@@ -1,7 +1,7 @@
 # Cipherware runbook
 
 ## Product
-Local Mississippi tech business site for [cipherware.tech](https://cipherware.tech): IT/network consulting, device repair & support, IoT, AI, and software development.
+Local Mississippi tech business site for [cipherware.tech](https://cipherware.tech): IT/network consulting, device repair & support, website design, hosting, domains, IoT, AI, and software development.
 
 ## Site map
 - `index.html` — Home

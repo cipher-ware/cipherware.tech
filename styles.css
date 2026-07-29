@@ -1,4 +1,4 @@
-@import url("vendor/cipherware-kit/cipherware.css?v=0.2.0");
+@import url("vendor/cipherware-kit/cipherware.css?v=0.2.1");
 
 /* Site-specific layout (marketing pages) — chrome/tokens come from cipherware-kit */
 
@@ -29,8 +29,8 @@
 .brand {
   margin: 0 0 1rem;
   font-family: var(--font-display);
-  font-size: clamp(2.35rem, 11vw, 4.5rem);
   font-weight: 800;
+  font-size: clamp(2.35rem, 11vw, 4.5rem);
   letter-spacing: -0.04em;
   line-height: 0.95;
   color: var(--text);
@@ -218,6 +218,10 @@
   background: color-mix(in srgb, var(--bg-elevated) 80%, transparent);
 }
 
+.mobile-only {
+  display: none;
+}
+
 @keyframes rise {
   from {
     opacity: 0;
@@ -247,6 +251,123 @@
   }
   96% {
     opacity: 0.15;
+  }
+}
+
+/* Phone-first polish — most Cipherware traffic is mobile */
+@media (max-width: 719px) {
+  #book {
+    scroll-margin-top: 4.25rem;
+  }
+
+  .page {
+    min-height: 0;
+    padding-bottom: 2.5rem;
+  }
+
+  .hero {
+    min-height: 0;
+    align-items: start;
+    gap: 1.5rem;
+    padding: 0.85rem 0 1.75rem;
+  }
+
+  .brand {
+    font-size: clamp(2.6rem, 13vw, 3.35rem);
+    margin-bottom: 0.55rem;
+  }
+
+  .hero h1,
+  .page-intro h1 {
+    font-size: clamp(1.4rem, 6.4vw, 1.8rem);
+    margin-bottom: 0.7rem;
+  }
+
+  .lede {
+    font-size: 1rem;
+    line-height: 1.45;
+    margin-bottom: 0.9rem;
+  }
+
+  .aside {
+    margin-bottom: 1.15rem;
+    font-size: 0.92rem;
+  }
+
+  .cta-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.7rem;
+    width: 100%;
+  }
+
+  .cta-row .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .mobile-only {
+    display: inline-flex;
+  }
+
+  .mark {
+    justify-content: center;
+    padding-top: 0.25rem;
+  }
+
+  .sad-computer {
+    width: min(52vw, 190px);
+  }
+
+  .page-intro {
+    padding: 1.15rem 0 1.1rem;
+  }
+
+  .prose p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .service-list {
+    margin-top: 1rem;
+  }
+
+  .service-item {
+    padding: 1.2rem 0;
+    gap: 0.65rem;
+  }
+
+  .service-item h2 {
+    font-size: 1.15rem;
+  }
+
+  .service-item .link-accent {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+  }
+
+  .contact-layout {
+    gap: 1.75rem;
+  }
+
+  .contact-block a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.5rem;
+    font-size: 1.05rem;
+  }
+
+  .booking {
+    min-height: 0;
+  }
+
+  .booking h2 {
+    font-size: 1.2rem;
+  }
+
+  #cal-embed {
+    min-height: 520px;
   }
 }
 

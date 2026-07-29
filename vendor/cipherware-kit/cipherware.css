@@ -26,7 +26,7 @@
   --page-max: var(--cw-page-max);
   --pad: var(--cw-pad);
 }
-/* Cipherware kit — base + chrome patterns (v0.2.0) */
+/* Cipherware kit — base + chrome patterns (v0.2.1) */
 
 *,
 *::before,
@@ -346,3 +346,43 @@ svg {
     scroll-behavior: auto;
   }
 }
+
+@media (max-width: 719px) {
+  :root {
+    --cw-pad: clamp(1rem, 4.5vw, 1.5rem);
+    --pad: clamp(1rem, 4.5vw, 1.5rem);
+  }
+
+  .site-header {
+    padding: 0.85rem var(--pad);
+    gap: 0.65rem 0.85rem;
+  }
+
+  .logo-text {
+    font-size: 1.05rem;
+  }
+
+  .nav a {
+    display: flex;
+    align-items: center;
+    min-height: 2.75rem;
+    font-size: 1.1rem;
+  }
+
+  .btn {
+    min-height: 3rem;
+    padding: 0.85rem 1.2rem;
+  }
+
+  .site-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding: 1.25rem var(--pad) 2rem;
+  }
+
+  .footer-meta {
+    gap: 0.45rem 1rem;
+  }
+}
+

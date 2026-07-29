@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact &amp; Book — Cipherware</title>
+    <meta
+      name="description"
+      content="Contact Cipherware in Little Rock, MS or book an appointment online. Phone, email, hours, and address."
+    />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500&family=Syne:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="atmosphere" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="logo" href="index.html">
+        <img src="favicon.svg" width="32" height="32" alt="" />
+        <span class="logo-text">Cipherware</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+      </nav>
+    </header>
+
+    <main class="page">
+      <header class="page-intro">
+        <h1>Say hi — or grab a slot.</h1>
+        <p class="lede">
+          Call, email, stop by during hours, or book online. We’ll meet you
+          wherever the tech is misbehaving.
+        </p>
+      </header>
+
+      <div class="contact-layout">
+        <div class="contact-details">
+          <div class="contact-block">
+            <h2>Phone</h2>
+            <p><a href="tel:+16016788555">(601) 678-8555</a></p>
+          </div>
+          <div class="contact-block">
+            <h2>Email</h2>
+            <p>
+              <a href="mailto:nate@cipherware.tech">nate@cipherware.tech</a>
+            </p>
+          </div>
+          <div class="contact-block">
+            <h2>Address</h2>
+            <p>
+              5456 Hopewell Rd<br />
+              Little Rock, MS 39337
+            </p>
+          </div>
+          <div class="contact-block">
+            <h2>Hours</h2>
+            <p>Monday–Friday<br />9:00 AM – 6:00 PM</p>
+          </div>
+        </div>
+
+        <section class="booking" id="book" aria-labelledby="book-heading">
+          <h2 id="book-heading">Book an appointment</h2>
+          <div id="cal-embed"></div>
+          <p class="lede" style="margin-top: 1rem; margin-bottom: 0">
+            Prefer a direct link?
+            <a
+              class="link-accent"
+              id="cal-fallback"
+              href="https://cal.com/cipherware"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Open Cal.com</a
+            >
+          </p>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-meta">
+        <a href="tel:+16016788555">(601) 678-8555</a>
+        <a href="mailto:nate@cipherware.tech">nate@cipherware.tech</a>
+        <span>Mon–Fri 9AM–6PM</span>
+      </div>
+      <span>Little Rock, MS</span>
+    </footer>
+
+    <script src="js/config.js"></script>
+    <script src="js/cal-embed.js"></script>
+  </body>
+</html>

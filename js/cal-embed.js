@@ -1,5 +1,5 @@
 (function () {
-  var calLink = window.CIPHERWARE_CAL_LINK || "cipherware";
+  var calLink = window.CIPHERWARE_CAL_LINK || "nathaniel-more-4e9oew";
   var fallback = document.getElementById("cal-fallback");
   if (fallback) {
     fallback.href = "https://cal.com/" + calLink;

@@ -23,7 +23,7 @@ Local Mississippi tech business site for [cipherware.tech](https://cipherware.te
 
 ## Cal.com
 - Config: [`js/config.js`](../../js/config.js) — `window.CIPHERWARE_CAL_LINK`
-- Current link path: `cipherware` → https://cal.com/cipherware
+- Current link path: `nathaniel-more-4e9oew` → https://cal.com/nathaniel-more-4e9oew
 - If the username or event slug changes, update `CIPHERWARE_CAL_LINK` only (fallback link on Contact updates from the same value).
 
 ## Hosting

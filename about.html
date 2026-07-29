@@ -25,7 +25,16 @@
         <img src="favicon.svg" width="32" height="32" alt="" />
         <span class="logo-text">Cipherware</span>
       </a>
-      <nav class="nav" aria-label="Primary">
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="site-nav"
+        aria-label="Menu"
+      >
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+      </button>
+      <nav id="site-nav" class="nav" aria-label="Primary">
         <a href="index.html">Home</a>
         <a href="about.html" aria-current="page">About</a>
         <a href="services.html">Services</a>
@@ -73,7 +82,7 @@
       </div>
       <div class="footer-meta">
         <span>Little Rock, MS</span>
-        <span class="site-version" data-site-version>v1.3.0</span>
+        <span class="site-version" data-site-version>v1.3.1</span>
       </div>
     </footer>
     <script src="js/config.js"></script>

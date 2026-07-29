@@ -38,4 +38,4 @@ Local Mississippi tech business site for [cipherware.tech](https://cipherware.te
 - Display name: Cipherware
 - Mark: sad-computer SVG (inline on Home; `favicon.svg` in nav)
 - Tone: playful
-- Hero aside can still nod to “Something’s cooking.”
+- Hero aside: “Your Wi‑Fi called. It’s embarrassed.”

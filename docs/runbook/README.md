@@ -9,8 +9,22 @@ Local Mississippi tech business site for [cipherware.tech](https://cipherware.te
 - `services.html` — Services
 - `contact.html` — Contact + Cal.com booking (`#book`)
 
+## Shared UI kit
+- Source of truth: `/home/nate/Documents/dev/cipherware-kit` (separate repo)
+- Vendored copy for static deploy: `vendor/cipherware-kit/cipherware.css` (kit `0.1.0`)
+- Marketing `styles.css` `@import`s the kit, then adds page-specific rules
+- Re-copy from kit when bumping:  
+  `cp ../cipherware-kit/packages/css/cipherware.css vendor/cipherware-kit/cipherware.css`
+
+## App / auth / invoicing
+- Laravel app: `/home/nate/Documents/dev/cipherware-app` (separate repo)
+- Planned subdomain: `app.cipherware.tech` → Laravel `public/`
+- Node reserved for later IoT / realtime services
+
 ## Stack
-- Static HTML + CSS + small JS (no framework, no build step)
+- Marketing: static HTML + CSS + small JS (no build step)
+- Kit: tokens + HTML/CSS patterns (Astro/React components later)
+- App: Laravel 12.x skeleton (`composer install` once PHP is available)
 - Google Fonts: Syne (display), Outfit (body)
 - Accent: electric cyan `#00E5FF` on near-black `#0A0A0A`
 - Booking: Cal.com inline embed (`js/cal-embed.js`)
@@ -34,11 +48,10 @@ Local Mississippi tech business site for [cipherware.tech](https://cipherware.te
 
 ## Hosting
 - Domain registrar / host: Namecheap (cPanel)
-- Deploy: upload the whole site root to `public_html`:
-  - `index.html`, `about.html`, `services.html`, `contact.html`
-  - `styles.css`, `favicon.svg`
-  - `js/config.js`, `js/site.js`, `js/cal-embed.js`
-- No build step.
+- Deploy marketing site to `public_html`:
+  - HTML pages, `styles.css`, `favicon.svg`, `js/*`
+  - `vendor/cipherware-kit/cipherware.css` (required by `@import`)
+- No build step for marketing site.
 
 ## Brand notes
 - Display name: Cipherware

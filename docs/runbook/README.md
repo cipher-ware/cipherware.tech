@@ -40,12 +40,13 @@ Local Mississippi tech business site for [cipherware.tech](https://cipherware.te
 - Phone: `(601) 678-8555`
 - Address: `5456 Hopewell Rd, Little Rock, MS 39337`
 - Hours: Monday–Friday, 9:00 AM – 6:00 PM
+- Service area: Little Rock, MS and within ~50 miles (Meridian, Philadelphia, Newton, Decatur, Union, Forest, nearby East Central MS)
 
 ## Version
 - Shown in the site footer as `vX.Y.Z`
 - Set in [`js/config.js`](../../js/config.js) as `window.CIPHERWARE_VERSION`
 - Keep in sync with the release branch name (e.g. `release/1.3.2` → `1.3.2`)
-- Current: `1.3.4`
+- Current: `1.3.6`
 
 ## Cal.com
 - Config: [`js/config.js`](../../js/config.js) — `window.CIPHERWARE_CAL_LINK`

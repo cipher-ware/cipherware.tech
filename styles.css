@@ -39,8 +39,6 @@ html, body {
   letter-spacing: -0.04em;
   line-height: 0.95;
   color: var(--text);
-  overflow-wrap: break-word;
-  word-break: break-word;
   animation: rise 0.9s ease both;
 }
 
@@ -282,8 +280,6 @@ html, body {
   .brand {
     font-size: clamp(2rem, 9.5vw, 2.85rem);
     margin-bottom: 0.55rem;
-    overflow-wrap: break-word;
-    word-break: break-word;
   }
 
   .hero h1,
@@ -383,6 +379,12 @@ html, body {
 @media (min-width: 800px) {
   .hero {
     grid-template-columns: 1.1fr 0.9fr;
+  }
+
+  .brand {
+    /* Never mid-word wrap the mark name in the two-column hero */
+    white-space: nowrap;
+    font-size: clamp(2.5rem, 5.5vw, 4.5rem);
   }
 
   .mark {

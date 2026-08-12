@@ -158,40 +158,69 @@ body {
 
 .service-list {
   display: grid;
-  gap: 0;
+  gap: 0.85rem;
   margin: 1.5rem 0 0;
   padding: 0;
   list-style: none;
-  border-top: 1px solid var(--line);
 }
 
-.service-item {
+.service-card {
   display: grid;
-  gap: 0.75rem;
-  padding: 1.5rem 0;
-  border-bottom: 1px solid var(--line);
+  gap: 1rem;
+  padding: 1.25rem 1.2rem;
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--bg-elevated) 70%, transparent);
+  text-decoration: none;
+  color: inherit;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.service-card:hover,
+.service-card:focus-visible {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent-soft) 55%, var(--bg-elevated));
+  outline: none;
+}
+
+.service-card:hover .service-card-cta,
+.service-card:focus-visible .service-card-cta {
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 @media (min-width: 700px) {
-  .service-item {
-    grid-template-columns: 1fr auto;
-    align-items: end;
-    gap: 1.5rem;
+  .service-list {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .service-card {
+    grid-template-rows: 1fr auto;
+    min-height: 100%;
+    padding: 1.35rem 1.3rem;
   }
 }
 
-.service-item h2 {
-  margin: 0 0 0.4rem;
+.service-card-copy h2 {
+  margin: 0 0 0.45rem;
   font-family: var(--font-display);
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 700;
   letter-spacing: -0.02em;
 }
 
-.service-item p {
+.service-card-copy p {
   margin: 0;
   color: var(--muted);
-  max-width: 36rem;
+  font-size: 0.98rem;
+}
+
+.service-card-cta {
+  justify-self: start;
+  pointer-events: none;
 }
 
 .contact-layout {
@@ -366,20 +395,19 @@ body {
 
   .service-list {
     margin-top: 1rem;
+    gap: 0.75rem;
   }
 
-  .service-item {
-    padding: 1.2rem 0;
-    gap: 0.65rem;
+  .service-card {
+    padding: 1.15rem 1.05rem;
+    gap: 0.85rem;
   }
 
-  .service-item h2 {
-    font-size: 1.15rem;
+  .service-card-copy h2 {
+    font-size: 1.12rem;
   }
 
-  .service-item .link-accent {
-    display: inline-flex;
-    align-items: center;
+  .service-card-cta {
     min-height: 2.75rem;
   }
 
@@ -438,7 +466,8 @@ body {
     animation: none;
   }
 
-  .sad-computer .mouth {
+  .sad-computer .mouth,
+  .service-card {
     transition: none;
   }
 }

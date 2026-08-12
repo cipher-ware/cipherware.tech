@@ -31,7 +31,7 @@ Local Mississippi tech business site for [cipherware.tech](https://cipherware.te
 - Marketing: static HTML + CSS + small JS (no build step)
 - Kit: tokens + HTML/CSS patterns (Astro/React components later)
 - App: Laravel 12.x skeleton (`composer install` once PHP is available)
-- Google Fonts: Syne (display), Outfit (body)
+- Google Fonts: Space Grotesk (display), Outfit (body)
 - Accent: electric cyan `#00E5FF` on near-black `#0A0A0A`
 - Booking: Cal.com inline embed (`js/cal-embed.js`)
 

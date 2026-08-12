@@ -4,10 +4,12 @@
 Local Mississippi tech business site for [cipherware.tech](https://cipherware.tech): IT/network consulting, device repair & support, website design, hosting, domains, IoT, AI, and software development.
 
 ## Site map
-- `index.html` — Home
-- `about.html` — About
-- `services.html` — Services
-- `contact.html` — Contact + Cal.com booking (`#book`)
+- `/` → `index.html` — Home
+- `/about` → `about.html` — About
+- `/services` → `services.html` — Services
+- `/contact` → `contact.html` — Contact + Cal.com booking (`#book`)
+
+Public URLs are extensionless. Rules live in [`.htaccess`](../../.htaccess) (LiteSpeed). Do not remove without replacing — old `*.html` paths 301 to the clean URLs.
 
 ## Shared UI kit
 - Source of truth: `/home/nate/Documents/dev/cipherware-kit` (separate repo)
@@ -46,7 +48,7 @@ Local Mississippi tech business site for [cipherware.tech](https://cipherware.te
 - Shown in the site footer as `vX.Y.Z`
 - Set in [`js/config.js`](../../js/config.js) as `window.CIPHERWARE_VERSION`
 - Keep in sync with the release branch name (e.g. `release/1.3.2` → `1.3.2`)
-- Current: `1.5.0`
+- Current: `1.7.0`
 
 ## Cal.com
 - Config: [`js/config.js`](../../js/config.js) — `window.CIPHERWARE_CAL_LINK`
@@ -56,7 +58,8 @@ Local Mississippi tech business site for [cipherware.tech](https://cipherware.te
 ## Hosting
 - Domain registrar / host: Namecheap (cPanel)
 - Deploy marketing site to `public_html`:
-  - HTML pages, `styles.css`, `favicon.svg`, `js/*`
+  - HTML pages, `styles.css`, `favicon.svg`, `og-image.png`, `js/*`
+  - `.htaccess` (clean URL rewrites — required for `/about` etc.)
   - `vendor/cipherware-kit/cipherware.css` (required by `@import`)
 - No build step for marketing site.
 - FTP for deploys/validation: use an account whose Directory is `public_html` (not a nested `/cursor` jail). Recreate the FTP account if cPanel won’t let you change the path.

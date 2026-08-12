@@ -197,6 +197,10 @@ body {
     gap: 1rem;
   }
 
+  .service-list.is-single {
+    grid-template-columns: 1fr;
+  }
+
   .service-card {
     grid-template-rows: 1fr auto;
     min-height: 100%;

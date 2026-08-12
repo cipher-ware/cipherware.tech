@@ -46,7 +46,7 @@ Local Mississippi tech business site for [cipherware.tech](https://cipherware.te
 - Shown in the site footer as `vX.Y.Z`
 - Set in [`js/config.js`](../../js/config.js) as `window.CIPHERWARE_VERSION`
 - Keep in sync with the release branch name (e.g. `release/1.3.2` → `1.3.2`)
-- Current: `1.3.6`
+- Current: `1.5.0`
 
 ## Cal.com
 - Config: [`js/config.js`](../../js/config.js) — `window.CIPHERWARE_CAL_LINK`
@@ -95,3 +95,10 @@ Skipping either side leaves HTTPS on the shared `*.web-hosting.com` cert (browse
 - Mark: sad-computer SVG (inline on Home; `favicon.svg` in nav)
 - Tone: playful
 - Hero aside: “Your Wi‑Fi called. It’s embarrassed.”
+
+
+## Open Graph / social share
+- Image: [`og-image.png`](../../og-image.png) (1200×630)
+- Absolute URL in meta: `https://cipherware.tech/og-image.png`
+- Per-page `og:title` / `og:description` / `og:url` + Twitter `summary_large_image`
+- After changing the image, re-scrape with [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/) / [Twitter Card Validator](https://cards-dev.twitter.com/validator)

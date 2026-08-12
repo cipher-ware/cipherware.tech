@@ -223,6 +223,16 @@ body {
   pointer-events: none;
 }
 
+.service-card.is-static {
+  cursor: default;
+}
+
+.service-card.is-static:hover,
+.service-card.is-static:focus-visible {
+  border-color: var(--line);
+  background: color-mix(in srgb, var(--bg-elevated) 70%, transparent);
+}
+
 .contact-layout {
   display: grid;
   gap: clamp(2rem, 5vw, 3rem);

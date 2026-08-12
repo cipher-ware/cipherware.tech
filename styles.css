@@ -111,9 +111,26 @@ body {
   animation: float 5.5s ease-in-out infinite;
 }
 
-.sad-computer circle,
-.sad-computer path[d^="M100"] {
+.sad-computer circle {
   animation: blink 4.5s ease-in-out infinite;
+}
+
+.sad-computer .mouth {
+  transition: opacity 0.25s ease;
+}
+
+.sad-computer .mouth-happy {
+  opacity: 0;
+}
+
+.hero:has(.cta-mood:hover) .sad-computer .mouth-sad,
+.hero:has(.cta-mood:focus-visible) .sad-computer .mouth-sad {
+  opacity: 0;
+}
+
+.hero:has(.cta-mood:hover) .sad-computer .mouth-happy,
+.hero:has(.cta-mood:focus-visible) .sad-computer .mouth-happy {
+  opacity: 1;
 }
 
 .page-intro {
@@ -417,8 +434,11 @@ body {
   .cta-row,
   .mark,
   .sad-computer,
-  .sad-computer circle,
-  .sad-computer path[d^="M100"] {
+  .sad-computer circle {
     animation: none;
+  }
+
+  .sad-computer .mouth {
+    transition: none;
   }
 }
